@@ -13,5 +13,5 @@ jobs:
   clean-up:
     runs-on: ubuntu-latest
     steps:
-      - run: Ths is a second job
+      - run: echo "Ths is a second job"
         name: Printing message
