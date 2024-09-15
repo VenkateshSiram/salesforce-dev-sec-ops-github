@@ -1,0 +1,17 @@
+name: Github By Venkatesh
+run-name: ${{github.actor}} is running the github actions
+## This will run either on push, pull_request
+
+on: [push, pull_request]
+
+jobs:
+  build-and-deploy: ## Name of the job
+    runs-on: ubuntu-latest ## Github Hosed [Self Hosted]
+    steps:
+      - run: echo "my First job"
+        name: "Printing message"
+  clean-up:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Ths is a second job"
+        name: Printing message
