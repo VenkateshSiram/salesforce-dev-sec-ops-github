@@ -16,7 +16,7 @@ jobs:
            fetch-depth: 0
        - name: check
          run: echo "Test"
-       - name: npm install
+       - name: Install npm
          run: npm install
        - name: Install Salesforce CLI
          run: npm install @salesforce/Cli --global
@@ -28,5 +28,5 @@ jobs:
   clean-up:
     runs-on: ubuntu-latest
     steps:
-      - run: Ths is a second job
-        name: Printing message
+      - run: echo "Ths is a second job"
+        name: "Printing message"
