@@ -21,7 +21,7 @@ jobs:
        - name: Install Salesforce CLI
          run: npm install @salesforce/cli --global
        - name: Decrypt the server.key.enc file
-         run: openssl enc -nosalt -aes-256-cbc -d -in assets/server.key.enc -out assets/server.key -base64 -k ${{ secrets.KEY}} -iv ${{ secrets.IV}}
+         run: openssl enc -nosalt -aes-256-cbc -d -in assets/server.key.enc -out assets/server.key -base64 -pbkdf2 -k ${{ secrets.KEY}} -iv ${{ secrets.IV}}
        - name: Authorize with Salesforce Org
          run: sf org login jwt --username ${{ secrets.SF_USERNAME}} --jwt-key-file assets/server.key --client-id ${{ secrets.SF_CLIENT_ID}} --set-default --alias ci-org --instance-url  ${{ secrets.SF_INSTANCE_URL}}
        - name: pring user Information
